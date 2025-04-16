@@ -9,5 +9,6 @@
     ./editor/treesitter
 
     ./tools/snacks
+    ./tools/comment.nix
   ];
 }
