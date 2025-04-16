@@ -7,6 +7,7 @@
     ./ui/noice.nix
     ./ui/notify.nix
     ./ui/tagbar.nix
+    ./ui/ufo.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
