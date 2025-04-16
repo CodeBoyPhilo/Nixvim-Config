@@ -3,6 +3,7 @@
     ./ui/catppuccin.nix
     ./ui/bufferline.nix
     ./ui/dropbar.nix
+    ./ui/lualine.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
