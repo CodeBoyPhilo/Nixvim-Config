@@ -4,6 +4,7 @@
     ./ui/bufferline.nix
     ./ui/dropbar.nix
     ./ui/lualine.nix
+    ./ui/noice.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
