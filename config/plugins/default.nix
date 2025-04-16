@@ -16,6 +16,7 @@
     ./tools/navigator.nix
     ./tools/neotree.nix
     ./tools/telescope.nix
+    ./tools/trouble.nix
     ./tools/which-key.nix
   ];
 }
