@@ -1,6 +1,7 @@
 {
   imports = [
     ./ui/catppuccin.nix
+    ./ui/bufferline.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
