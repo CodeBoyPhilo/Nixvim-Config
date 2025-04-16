@@ -11,5 +11,6 @@
     ./tools/snacks
     ./tools/comment.nix
     ./tools/gitsigns.nix
+    ./tools/lazy.nix
   ];
 }
