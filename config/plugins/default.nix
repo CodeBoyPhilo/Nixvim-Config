@@ -13,5 +13,6 @@
     ./tools/gitsigns.nix
     ./tools/lazy.nix
     ./tools/leap.nix
+    ./tools/navigator.nix
   ];
 }
