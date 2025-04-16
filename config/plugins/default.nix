@@ -5,6 +5,7 @@
     ./ui/dropbar.nix
     ./ui/lualine.nix
     ./ui/noice.nix
+    ./ui/notify.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
