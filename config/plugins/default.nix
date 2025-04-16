@@ -14,5 +14,6 @@
     ./tools/lazy.nix
     ./tools/leap.nix
     ./tools/navigator.nix
+    ./tools/neotree.nix
   ];
 }
