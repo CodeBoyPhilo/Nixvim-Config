@@ -10,5 +10,6 @@
 
     ./tools/snacks
     ./tools/comment.nix
+    ./tools/gitsigns.nix
   ];
 }
