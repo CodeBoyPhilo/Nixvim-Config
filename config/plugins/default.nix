@@ -8,6 +8,7 @@
     ./ui/notify.nix
     ./ui/tagbar.nix
     ./ui/ufo.nix
+    ./ui/web-devicons.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
