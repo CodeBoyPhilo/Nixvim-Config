@@ -12,5 +12,6 @@
     ./tools/comment.nix
     ./tools/gitsigns.nix
     ./tools/lazy.nix
+    ./tools/leap.nix
   ];
 }
