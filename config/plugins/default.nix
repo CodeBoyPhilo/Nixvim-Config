@@ -6,6 +6,7 @@
     ./ui/lualine.nix
     ./ui/noice.nix
     ./ui/notify.nix
+    ./ui/nui.nix
     ./ui/tagbar.nix
     ./ui/ufo.nix
     ./ui/web-devicons.nix
@@ -21,6 +22,7 @@
     ./tools/gitsigns.nix
     ./tools/lazy.nix
     ./tools/leap.nix
+    ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
     ./tools/telescope.nix
