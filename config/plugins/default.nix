@@ -6,6 +6,7 @@
     ./editor/conform.nix
     ./editor/blink.nix
     ./editor/auto-close.nix
+    ./editor/treesitter
 
     ./tools/snacks
   ];
