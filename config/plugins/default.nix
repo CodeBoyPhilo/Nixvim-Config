@@ -6,6 +6,7 @@
     ./ui/lualine.nix
     ./ui/noice.nix
     ./ui/notify.nix
+    ./ui/tagbar.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
