@@ -15,5 +15,6 @@
     ./tools/leap.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
+    ./tools/telescope.nix
   ];
 }
