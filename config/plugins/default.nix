@@ -19,6 +19,7 @@
 
     ./tools/snacks
     ./tools/comment.nix
+    ./tools/dap.nix
     ./tools/gitsigns.nix
     ./tools/lazy.nix
     ./tools/leap.nix
