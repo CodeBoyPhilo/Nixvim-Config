@@ -8,6 +8,7 @@
     ./ui/notify.nix
     ./ui/nui.nix
     ./ui/tagbar.nix
+    ./ui/tpipeline.nix
     ./ui/ufo.nix
     ./ui/web-devicons.nix
 
