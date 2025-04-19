@@ -2,6 +2,7 @@
   imports = [
     ./ui/catppuccin.nix
     ./ui/bufferline.nix
+    ./ui/dashboard.nix
     ./ui/dropbar.nix
     ./ui/lualine.nix
     ./ui/noice.nix
