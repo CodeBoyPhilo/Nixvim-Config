@@ -62,4 +62,15 @@
       };
     }
   ];
+
+  plugins.lualine = {
+    settings = {
+      options = {
+        disabled_filetypes = [
+          "neo-tree"
+        ];
+      };
+    };
+  };
+
 }
