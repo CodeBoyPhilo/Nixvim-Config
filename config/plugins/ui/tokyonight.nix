@@ -10,7 +10,7 @@
         sidebars = "transparent";
         comments.italic = true;
         functions.italic = true;
-        variables.italic = true;
+        variables.italic = false;
         keywords = {
           italic = true;
           bold = true;
