@@ -2,7 +2,8 @@
   plugins = {
     telescope = {
       enable = true;
-      highlightTheme = "Catppuccin Mocha";
+      # highlightTheme = "Catppuccin Mocha";
+      highlightTheme = "tokyonight";
       extensions = {
         fzf-native.enable = true;
         live-grep-args.enable = true;
