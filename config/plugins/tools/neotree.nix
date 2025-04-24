@@ -12,7 +12,12 @@
         visible = true;
         neverShow = [
           ".git"
+          ".gitignore"
           ".DS_Store"
+          "__pycache__"
+          ".ipynb_checkpoints"
+          ".python-version"
+          "uv.lock"
         ];
       };
     };
