@@ -10,7 +10,6 @@
     ./ui/nui.nix
     ./ui/tagbar.nix
     ./ui/tokyonight.nix
-    ./ui/tpipeline.nix
     ./ui/ufo.nix
     ./ui/web-devicons.nix
 
@@ -32,5 +31,7 @@
     ./tools/telescope.nix
     ./tools/trouble.nix
     ./tools/which-key.nix
+
+    ./extras/extras.nix
   ];
 }
