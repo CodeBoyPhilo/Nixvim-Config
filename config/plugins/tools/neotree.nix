@@ -7,6 +7,15 @@
     enableRefreshOnWrite = true;
     closeIfLastWindow = true;
     popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+    filesystem = {
+      filteredItems = {
+        visible = true;
+        neverShow = [
+          ".git"
+          ".DS_Store"
+        ];
+      };
+    };
     buffers = {
       bindToCwd = false;
       followCurrentFile = {
