@@ -17,10 +17,10 @@
       action = ''<ESC>"+p'';
     }
 
-    # Normal mode: Paste from system clipboard with 'shift + ctrl + v'
+    # Normal mode: Paste from system clipboard with 'cmd + v'
     {
       mode = "n";
-      key = "<C-S-v>";
+      key = "<D-v>";
       action = ''"+p'';
       options.desc = "Paste from clipboard";
     }
