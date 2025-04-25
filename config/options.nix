@@ -33,6 +33,7 @@
   globals = {
     # Netrw list style
     netrw_liststyle = 3;
+    neovide_hide_mouse_when_typing = true;
   };
 
   # Clipboard settings
