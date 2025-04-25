@@ -72,7 +72,7 @@
     			-- line_offset = function(args)
     			-- 		return args.line1
     			-- end,        							
-    			no_line_numnber = true;
+    			no_line_number = true;
     			to_clipboard = true,
     			window_title = function()
     				return vim.fn.fnamemodify(
