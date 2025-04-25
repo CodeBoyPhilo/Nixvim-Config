@@ -10,12 +10,26 @@
       options.desc = "Exit insert mode with jk";
     }
 
-    # Normal mode: Paste with System Clipboard with 'shift + ctrl + v'
+    # Insert mode: Paste from system clipboard with 'cmd + v'
+    {
+      mode = "i";
+      key = "<D-v>";
+      action = ''<ESC>"+p'';
+    }
+
+    # Normal mode: Paste from system clipboard with 'shift + ctrl + v'
     {
       mode = "n";
       key = "<C-S-v>";
-      action = "+p";
+      action = ''"+p'';
       options.desc = "Paste from clipboard";
+    }
+
+    # Visual mode: Copy to system clipboard with 'cmd + c'
+    {
+      mode = "v";
+      key = "<D-c>";
+      action = ''"+y'';
     }
 
     # Normal mode: Clear search highlights
