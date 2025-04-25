@@ -60,8 +60,8 @@
                     ---------- nvim-silibon ----------
         						require("nvim-silicon").setup({
         							font         = "Maple Mono NF CN",
-        							theme        = "Catppuccin Mocha",
-        							background   = "#eff1f5",
+        							theme        = "Tokyonight Night",
+        							background   = "#16161E",
         							line_offset  = 1,
         							to_clipboard = true,
         							window_title = function()
