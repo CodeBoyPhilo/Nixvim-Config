@@ -14,7 +14,7 @@
     {
       mode = "i";
       key = "<C-v>";
-      action = "*p";
+      action = "+p";
       options.desc = "Paste from clipboard";
     }
 
