@@ -23,6 +23,7 @@
     ./tools/comment.nix
     ./tools/dap.nix
     ./tools/gitsigns.nix
+    ./tools/highlight-colors.nix
     ./tools/lazy.nix
     ./tools/leap.nix
     ./tools/mini.nix
