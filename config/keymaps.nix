@@ -10,10 +10,10 @@
       options.desc = "Exit insert mode with jk";
     }
 
-    # Insert mode: Paste with 'ctrl + v'
+    # Normal mode: Paste with 'ctrl + v'
     {
-      mode = "i";
-      key = "<C-v>";
+      mode = "n";
+      key = "<C-S-v>";
       action = "+p";
       options.desc = "Paste from clipboard";
     }
