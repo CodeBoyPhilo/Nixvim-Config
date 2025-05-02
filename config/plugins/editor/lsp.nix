@@ -16,7 +16,7 @@
     };
 
     lsp-format = {
-      enable = true;
+      enable = false;
     };
 
     # Main LSP configuration
