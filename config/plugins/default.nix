@@ -29,6 +29,7 @@
     ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
+		./tools/render-markdown.nix
     ./tools/telescope.nix
     ./tools/trouble.nix
     ./tools/which-key.nix
