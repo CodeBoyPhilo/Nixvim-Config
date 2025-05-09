@@ -3,16 +3,16 @@
   plugins.noice = {
     enable = true;
     settings = {
-      lsp = {
-        override = {
-          "vim.lsp.util.convert_input_to_markdown_lines" = true;
-          "vim.lsp.util.stylize_markdown" = true;
-          "cmp.entry.get_documentation" = true;
-        };
-        notify.enabled = true;
-        progress.enabled = true;
-        signature.enabled = !config.plugins.lsp-signature.enable;
-      };
+      # lsp = {
+      #   override = {
+      #     "vim.lsp.util.convert_input_to_markdown_lines" = true;
+      #     "vim.lsp.util.stylize_markdown" = true;
+      #     "cmp.entry.get_documentation" = true;
+      #   };
+      #   notify.enabled = true;
+      #   progress.enabled = true;
+      #   signature.enabled = !config.plugins.lsp-signature.enable;
+      # };
 
       presets = {
         bottom_search = false;

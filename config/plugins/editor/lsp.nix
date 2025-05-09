@@ -8,11 +8,11 @@
   plugins = {
     # LSP-related plugins
     lsp-lines = {
-      enable = true;
+      enable = false;
     };
 
     lsp-signature = {
-      enable = true;
+      enable = false;
     };
 
     lsp-format = {
@@ -35,7 +35,7 @@
         ruff = {
           enable = true;
         };
-        pyright = {
+        basedpyright = {
           enable = true;
         };
         jsonls = {
