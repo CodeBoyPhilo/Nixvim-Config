@@ -32,6 +32,28 @@
       action = ''"+y'';
     }
 
+    # Insert mode: Paste from system clipboard with 'shift + ctrl + v'
+    {
+      mode = "i";
+      key = "<C-S-v>";
+      action = ''<ESC>"+p'';
+    }
+
+    # Normal mode: Paste from system clipboard with 'shift + ctrl + v'
+    {
+      mode = "n";
+      key = "<C-S-v>";
+      action = ''"+p'';
+      options.desc = "Paste from clipboard";
+    }
+
+    # Visual mode: Copy to system clipboard with 'shift + ctrl + c'
+    {
+      mode = "v";
+      key = "<C-S-c>";
+      action = ''"+y'';
+    }
+
     # Normal mode: Clear search highlights
     {
       mode = "n";
