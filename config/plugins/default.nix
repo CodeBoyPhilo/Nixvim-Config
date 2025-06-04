@@ -33,6 +33,7 @@
     ./tools/telescope.nix
     ./tools/trouble.nix
 		./tools/vimtex.nix
+		./tools/wakatime.nix
     ./tools/which-key.nix
 
     ./extras/extras.nix
