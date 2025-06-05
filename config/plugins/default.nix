@@ -35,6 +35,7 @@
 		./tools/vimtex.nix
 		./tools/wakatime.nix
     ./tools/which-key.nix
+		./tools/yazi.nix
 
     ./extras/extras.nix
   ];
