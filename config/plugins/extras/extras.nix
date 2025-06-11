@@ -9,6 +9,7 @@
     pkgs.vimPlugins.vim-tpipeline
     pkgs.vimPlugins.luasnip
     pkgs.vimPlugins.minimap-vim
+		pkgs.vimPlugins.leetcode-nvim
     (pkgs.vimUtils.buildVimPlugin {
       name = "nvim-silicon";
       src = pkgs.fetchFromGitHub {
@@ -47,7 +48,6 @@
     local t = ls.text_node
     local i = ls.insert_node
 
-    -- Define custom snippets
     ls.add_snippets("toml", {
     s("pyright", {
     	t({
@@ -57,6 +57,12 @@
     	})
     }),
     })
+
+		require("leetcode").setup({
+		opts = {
+		lang = "python",
+		},
+		})
 
     ---------- nvim-silibon ----------
     require("nvim-silicon").setup({
