@@ -8,8 +8,8 @@ in
     enable = true;
     texlivePackage = pkgs.texlive.combined.scheme-full;
     settings = {
-		  view_method = "skim";
-      # view_general_viewer = if isDarwin then "skim" else "okular";
+		  view_method = if isDarwin then "skim" else "general";
+      view_general_viewer = "okular";
       view_general_options = "--unique file:@pdf\#src:@line@tex";
       compiler_latexmk = {
         aux_dir = "./aux";
