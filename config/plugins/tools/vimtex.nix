@@ -1,12 +1,16 @@
 { pkgs, ... }:
+let
+  isDarwin = pkgs.stdenv.isDarwin;
+  isLinux = pkgs.stdenv.isLinux;
+in
 {
   plugins.vimtex = {
     enable = true;
     texlivePackage = pkgs.texlive.combined.scheme-full;
     settings = {
-		  # view_method = "zathura";
-			view_general_viewer = "okular";
-			view_general_options = "--unique file:@pdf\#src:@line@tex";
+		  view_method = "skim";
+      # view_general_viewer = if isDarwin then "skim" else "okular";
+      view_general_options = "--unique file:@pdf\#src:@line@tex";
       compiler_latexmk = {
         aux_dir = "./aux";
         out_dir = "./out";
