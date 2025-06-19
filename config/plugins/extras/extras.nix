@@ -59,9 +59,7 @@
     })
 
 		require("leetcode").setup({
-		opts = {
-		lang = "python",
-		},
+			lang = "python",
 		})
 
     ---------- nvim-silibon ----------
