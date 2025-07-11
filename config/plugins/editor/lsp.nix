@@ -73,6 +73,9 @@
         texlab = {
           enable = true;
         };
+        tinymist = {
+          enable = true;
+        };
       };
 
       # LSP keymaps

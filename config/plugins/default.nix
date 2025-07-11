@@ -32,6 +32,7 @@
 		./tools/render-markdown.nix
     ./tools/telescope.nix
     ./tools/trouble.nix
+		./tools/typst-preview.nix
 		./tools/vimtex.nix
 		./tools/wakatime.nix
     ./tools/which-key.nix
