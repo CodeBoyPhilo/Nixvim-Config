@@ -13,6 +13,7 @@
     ./ui/tokyonight.nix
     ./ui/ufo.nix
     ./ui/web-devicons.nix
+		./ui/zen-mode.nix
 
     ./editor/lsp.nix
     ./editor/conform.nix
