@@ -8,6 +8,7 @@
     ./ui/noice.nix
     ./ui/notify.nix
     ./ui/nui.nix
+		./ui/numbertoggle.nix
     ./ui/tagbar.nix
     ./ui/tokyonight.nix
     ./ui/ufo.nix
