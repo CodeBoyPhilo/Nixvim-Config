@@ -8,13 +8,14 @@
     ./ui/noice.nix
     ./ui/notify.nix
     ./ui/nui.nix
-		./ui/numbertoggle.nix
+    ./ui/numbertoggle.nix
     ./ui/tagbar.nix
     ./ui/tokyonight.nix
     ./ui/ufo.nix
     ./ui/web-devicons.nix
-		./ui/zen-mode.nix
+    ./ui/zen-mode.nix
 
+    ./editor/avante.nix
     ./editor/lsp.nix
     ./editor/conform.nix
     ./editor/blink.nix
@@ -31,14 +32,14 @@
     ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
-		./tools/render-markdown.nix
+    ./tools/render-markdown.nix
     ./tools/telescope.nix
     ./tools/trouble.nix
-		./tools/typst-preview.nix
-		./tools/vimtex.nix
-		./tools/wakatime.nix
+    ./tools/typst-preview.nix
+    ./tools/vimtex.nix
+    ./tools/wakatime.nix
     ./tools/which-key.nix
-		./tools/yazi.nix
+    ./tools/yazi.nix
 
     ./extras/extras.nix
   ];
