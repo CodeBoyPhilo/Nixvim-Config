@@ -29,6 +29,7 @@
             };
           };
         };
+				image.enabled = true;
       };
     };
   };
