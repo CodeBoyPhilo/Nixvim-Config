@@ -20,6 +20,7 @@
     termguicolors = true;
     background = "dark";
     signcolumn = "yes";
+		conceallevel = 1;
 
     # Backspace behavior
     backspace = "indent,eol,start";
