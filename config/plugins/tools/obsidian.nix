@@ -9,6 +9,7 @@
         }
       ];
       templates.subdir = "templates";
+			ui.enable = false;
     };
   };
   keymaps = [
