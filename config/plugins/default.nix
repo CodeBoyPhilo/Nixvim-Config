@@ -32,6 +32,7 @@
     ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
+    ./tools/obsidian.nix
     ./tools/render-markdown.nix
     ./tools/telescope.nix
     ./tools/trouble.nix

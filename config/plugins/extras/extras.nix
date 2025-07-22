@@ -100,7 +100,7 @@
 
   keymaps = [
     {
-      key = "<leader>o";
+      key = "<leader>pm";
       action = "<cmd>MinimapToggle<CR>";
       mode = "n";
       options.desc = "Toggle Minimap";

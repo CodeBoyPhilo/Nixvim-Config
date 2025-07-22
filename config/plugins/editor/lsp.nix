@@ -67,7 +67,7 @@
             };
         };
 
-        marksman = {
+        markdown_oxide = {
           enable = true;
         };
         texlab = {
