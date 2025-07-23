@@ -68,7 +68,7 @@
         };
 
         marksman = {
-          enable = true;
+          enable = false;
         };
         markdown_oxide = {
           enable = true;
