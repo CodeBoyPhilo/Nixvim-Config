@@ -88,26 +88,15 @@
           };
           snippets.preset = "luasnip";
           sources = {
-            default =
-              [
-                "buffer"
-                "calc"
-                "dictionary"
-                "emoji"
-                "git"
-                "lsp"
-                "path"
-                "snippets"
-                "spell"
-              ]
-              ++ lib.optionals config.plugins.copilot-lua.enable [
-                "copilot"
-              ]
-              ++ lib.optionals config.plugins.avante.enable [
-                "avante_commands"
-                "avante_files"
-                "avante_mentions"
-              ];
+            default = [
+              "buffer"
+              "calc"
+              "emoji"
+              "git"
+              "lsp"
+              "path"
+              "snippets"
+            ];
 
             providers =
               {
@@ -120,19 +109,6 @@
                     end, vim.api.nvim_list_bufs())
                   end
                 '';
-
-                copilot = {
-                  name = "copilot";
-                  module = "blink-copilot";
-                  async = true;
-                  score_offset = 100;
-                };
-
-                dictionary = {
-                  name = "Dict";
-                  module = "blink-cmp-dictionary";
-                  min_keyword_length = 3;
-                };
 
                 emoji = {
                   name = "Emoji";
@@ -157,34 +133,12 @@
                   '';
                 };
 
-                spell = {
-                  name = "Spell";
-                  module = "blink-cmp-spell";
-                  score_offset = 1;
-                };
               }
               // lib.optionalAttrs config.plugins.blink-compat.enable {
                 calc = {
                   name = "calc";
                   module = "blink.compat.source";
                   score_offset = 2;
-                };
-              }
-              // lib.optionalAttrs (config.plugins.avante.enable && config.plugins.blink-compat.enable) {
-                avante_commands = {
-                  name = "avante_commands";
-                  module = "blink.compat.source";
-                  score_offset = 90;
-                };
-                avante_files = {
-                  name = "avante_files";
-                  module = "blink.compat.source";
-                  score_offset = 100;
-                };
-                avante_mentions = {
-                  name = "avante_mentions";
-                  module = "blink.compat.source";
-                  score_offset = 1000;
                 };
               };
           };

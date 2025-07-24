@@ -1,3 +1,0 @@
-{
-  plugins.lazy.enable = true;
-}
