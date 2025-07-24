@@ -25,6 +25,7 @@
     ./tools/gitsigns.nix
     ./tools/highlight-colors.nix
     ./tools/leap.nix
+		./tools/luasnip.nix
     ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
