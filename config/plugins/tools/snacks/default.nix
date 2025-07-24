@@ -10,6 +10,7 @@
     ./indent.nix
     ./bigfile.nix
     ./lazygit.nix
+		./image.nix
   ];
 
   plugins = {
@@ -29,7 +30,6 @@
             };
           };
         };
-				image.enabled = true;
       };
     };
   };
