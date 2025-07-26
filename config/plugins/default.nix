@@ -29,6 +29,7 @@
     ./tools/highlight-colors.nix
     ./tools/lazy.nix
     ./tools/leap.nix
+    ./tools/markdown-preview.nix
     ./tools/mini.nix
     ./tools/navigator.nix
     ./tools/neotree.nix

@@ -16,7 +16,7 @@
   keymaps = [
     {
       mode = "n";
-      key = "<leader>pp";
+      key = "<leader>tt";
       action = "<cmd>TagbarToggle<cr>";
       options = {
         desc = "Toggle Tagbar";
