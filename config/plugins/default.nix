@@ -25,10 +25,10 @@
     ./tools/snacks
     ./tools/comment.nix
     ./tools/dap.nix
+		./tools/flash.nix
     ./tools/gitsigns.nix
     ./tools/highlight-colors.nix
     ./tools/lazy.nix
-    ./tools/leap.nix
     ./tools/markdown-preview.nix
     ./tools/mini.nix
     ./tools/navigator.nix
