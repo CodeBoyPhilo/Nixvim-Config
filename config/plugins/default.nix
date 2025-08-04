@@ -22,9 +22,9 @@
     ./tools/snacks
     ./tools/comment.nix
     ./tools/dap.nix
+		./tools/flash.nix
     ./tools/gitsigns.nix
     ./tools/highlight-colors.nix
-    ./tools/leap.nix
 		./tools/luasnip.nix
     ./tools/mini.nix
     ./tools/navigator.nix
