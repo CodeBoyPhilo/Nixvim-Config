@@ -1,7 +1,7 @@
 { config, ... }:
 {
   colorschemes.tokyonight = {
-    enable = false;
+    enable = true;
     settings = {
       style = "night";
       transparent = false;
