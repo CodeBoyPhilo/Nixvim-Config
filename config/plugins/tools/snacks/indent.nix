@@ -15,7 +15,7 @@
           underline = true;
         };
         chunk = {
-          enabled = true;
+          enabled = false;
         };
       };
     };
