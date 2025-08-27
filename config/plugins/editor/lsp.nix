@@ -23,6 +23,9 @@
     lsp = {
       enable = true;
       inlayHints = true;
+      luaConfig.pre = ''
+        vim.lsp.handlers["$/progress"] = function() end
+      '';
 
       # Server configurations
       servers = {
@@ -68,15 +71,15 @@
         };
 
         marksman = {
-          enable = false;
-        };
-        markdown_oxide = {
           enable = true;
         };
         texlab = {
           enable = true;
         };
         tinymist = {
+          enable = true;
+        };
+        ltex = {
           enable = true;
         };
       };
