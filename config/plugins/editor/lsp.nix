@@ -81,6 +81,16 @@
         };
         ltex = {
           enable = true;
+          filetypes = [
+            "bibtex"
+            "html"
+            "latex"
+            "markdown"
+            "typst"
+          ];
+          settings = {
+            language = "en-AU";
+          };
         };
       };
 
