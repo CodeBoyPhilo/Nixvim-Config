@@ -1,8 +1,9 @@
+{ lib, ... }:
 {
   plugins.snacks = {
     settings = {
       image = {
-        enabled = true;
+        enabled = lib.generators.mkLuaInline "not vim.g.neovide";
         convert = {
           notify = false;
         };
