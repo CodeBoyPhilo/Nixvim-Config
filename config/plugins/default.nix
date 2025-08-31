@@ -31,7 +31,6 @@
     ./tools/lazy.nix
     ./tools/markdown-preview.nix
     ./tools/mini.nix
-		./tools/molten-quarto.nix
     ./tools/navigator.nix
     ./tools/neotree.nix
     ./tools/obsidian.nix
