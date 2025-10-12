@@ -38,8 +38,20 @@
         ruff = {
           enable = true;
         };
-        basedpyright = {
+        ty = {
           enable = true;
+        };
+        pyrefly = {
+          enable = true;
+        };
+        jedi_language_server = {
+          enable = false;
+        };
+        pylsp = {
+          enable = false;
+        };
+        basedpyright = {
+          enable = false;
         };
         jsonls = {
           enable = true;
