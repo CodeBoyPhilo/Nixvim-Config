@@ -1,39 +1,42 @@
 {
   plugins.neo-tree = {
     enable = true;
-    enableDiagnostics = true;
-    enableGitStatus = true;
-    enableModifiedMarkers = true;
-    enableRefreshOnWrite = true;
-    closeIfLastWindow = true;
-    popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
-    filesystem = {
-      filteredItems = {
-        visible = true;
-        neverShow = [
-          ".git"
-          ".gitignore"
-          ".DS_Store"
-          "__pycache__"
-          ".ipynb_checkpoints"
-          ".python-version"
-          "uv.lock"
-        ];
+    settings = {
+
+      enable_diagnostics = true;
+      enable_gitStatus = true;
+      enable_modified_markers = true;
+      enable_refresh_on_write = true;
+      close_if_last_window = true;
+      popup_border_style = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+      filesystem = {
+        filtered_items = {
+          visible = true;
+          never_show = [
+            ".git"
+            ".gitignore"
+            ".DS_Store"
+            "__pycache__"
+            ".ipynb_checkpoints"
+            ".python-version"
+            "uv.lock"
+          ];
+        };
       };
-    };
-    buffers = {
-      bindToCwd = false;
-      followCurrentFile = {
-        enabled = true;
+      buffers = {
+        bind_to_cwd = true;
+        follow_current_file = {
+          enabled = true;
+        };
       };
-    };
-    window = {
-      width = 40;
-      height = 15;
-      autoExpandWidth = false;
-      mappings = {
-        "<C-t>" = "open_tabnew";
-        "<C-v>" = "open_vsplit";
+      window = {
+        width = 40;
+        height = 15;
+        auto_expand_width = false;
+        mappings = {
+          "<C-t>" = "open_tabnew";
+          "<C-v>" = "open_vsplit";
+        };
       };
     };
   };
