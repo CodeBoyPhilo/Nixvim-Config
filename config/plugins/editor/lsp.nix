@@ -22,7 +22,7 @@
     # Main LSP configuration
     lsp = {
       enable = true;
-      inlayHints = true;
+      inlayHints = false;
       luaConfig.pre = ''
         vim.lsp.handlers["$/progress"] = function() end
       '';
