@@ -4,7 +4,11 @@
   imports = [
     ./options.nix
     ./keymaps.nix
-    ./plugins
+
+    ./plugins/editor
+    ./plugins/extras
+    ./plugins/tools
+    ./plugins/ui
   ];
 
   extraPackages = with pkgs; [

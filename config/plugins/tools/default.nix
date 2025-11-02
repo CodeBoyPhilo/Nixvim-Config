@@ -1,0 +1,23 @@
+{
+  imports = [
+    ./comment
+    ./dap
+    ./flash
+    ./gitsigns
+    ./highlight-colors
+    ./lazy
+    ./markdown-preview
+    ./mini
+    ./navigator
+    ./neotree
+    ./render-markdown
+    ./snacks
+    ./telescope
+    ./trouble
+    ./typst-preview
+    ./vimtex
+    ./wakatime
+    ./which-key
+    ./yazi
+  ];
+}
