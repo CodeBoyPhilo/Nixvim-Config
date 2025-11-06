@@ -3,15 +3,15 @@
   plugins.conform-nvim = {
     enable = true;
     settings = {
-      # format_on_save = ''
-      #   function(bufnr)
-      #     -- Disable with a global or buffer-local variable
-      #     if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
-      #       return
-      #     end
-      #     return { timeout_ms = 500, lsp_format = 'fallback' }
-      #   end
-      # '';
+      format_on_save = ''
+        function(bufnr)
+          -- Disable with a global or buffer-local variable
+          if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+            return
+          end
+          return { timeout_ms = 500, lsp_format = 'fallback' }
+        end
+      '';
       notify_on_error = true;
       formatters_by_ft = {
         # Common filetypes
@@ -37,8 +37,13 @@
           "shfmt"
         ];
         json = [ "jq" ];
+        tex = [ "tex-fmt" ];
+        toml = [ "taplo" ];
         # Formatter for all filetypes
-        "_" = [ "trim_whitespace" ];
+        "_" = {
+          __unkeyed-1 = "trim_whitespace";
+          lsp_format = "fallback";
+        };
       };
 
       formatters = {
@@ -68,6 +73,17 @@
         };
         shellharden = {
           command = "${lib.getExe pkgs.shellharden}";
+        };
+        tex-fmt = {
+          command = "${lib.getExe pkgs.tex-fmt}";
+          args = [
+            "-n"
+            "$FILENAME"
+          ];
+          stdin = false;
+        };
+        taplo = {
+          command = "${lib.getExe pkgs.taplo}";
         };
       };
     };

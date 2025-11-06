@@ -35,6 +35,9 @@
     # Netrw list style
     netrw_liststyle = 3;
     neovide_hide_mouse_when_typing = true;
+
+		# Format
+		disable_autoformat = true;
   };
 
   # Clipboard settings
