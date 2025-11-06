@@ -9,6 +9,7 @@
   description = "Philo's NixVim Config";
 
   inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -41,7 +42,8 @@
 
           extraSpecialArgs = {
             inherit inputs self;
-          } // import ./lib { inherit pkgs; };
+          }
+          // import ./lib { inherit pkgs; };
         };
         nvim = nixvim'.makeNixvimWithModule nixvimModule;
       in
