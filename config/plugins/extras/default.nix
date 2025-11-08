@@ -78,7 +78,7 @@
             require("nvim-silicon").setup({
             font         = "Maple Mono NF CN",
             no_round_corner = true,
-            theme        = "Tokyonight Night",
+            theme        = "Tokyonight Storm",
             background   = nil,
             pad_horiz = 0,
             pad_vert = 0,
@@ -95,7 +95,7 @@
             	)
             end,
             output = function()
-            	return "/Users/phil_oh/Desktop/screenshot/"
+            	return "~/Pictures/Screenshots/"
             		.. os.date("%Y-%m-%d at %H-%M-%S")
             		.. "_code.png"
             end,
