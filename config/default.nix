@@ -17,4 +17,9 @@
     fzf
     fd
   ];
+
+  theme = {
+    catppuccin.enable = true;
+    tokyonight.enable = false;
+  };
 }

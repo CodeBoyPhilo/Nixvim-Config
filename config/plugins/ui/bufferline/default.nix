@@ -2,12 +2,6 @@
   plugins.bufferline = {
     enable = true;
     settings = {
-      highlights = {
-        fill = {
-          # bg = "#1e1e2e"; # uncomment for catppuccin
-          bg = "#1a1b26"; # uncomment for tokyonight
-        };
-      };
       options = {
         themable = false;
         mode = "tabs";
