@@ -168,5 +168,38 @@
       action = "<cmd>LspInfo<cr>";
       options.desc = "Lsp Info";
     }
+    {
+      mode = "n";
+      key = "<leader>ch";
+      action.__raw = ''
+        function()
+          local inlay_hint = vim.lsp.inlay_hint
+          if inlay_hint == nil then
+            local buf_hint = vim.lsp.buf and vim.lsp.buf.inlay_hint
+            if buf_hint == nil then
+              vim.notify("Inlay hints not supported", vim.log.levels.WARN)
+              return
+            end
+            inlay_hint = buf_hint
+          end
+
+          local bufnr = vim.api.nvim_get_current_buf()
+
+          if type(inlay_hint) == "table" then
+            local enabled = inlay_hint.is_enabled({ bufnr = bufnr })
+            inlay_hint.enable(not enabled, { bufnr = bufnr })
+          else
+            local enabled = vim.b.lsp_inlay_hint_enabled
+            if enabled == nil then
+              enabled = false
+            end
+            enabled = not enabled
+            vim.b.lsp_inlay_hint_enabled = enabled
+            inlay_hint(bufnr, enabled)
+          end
+        end
+      '';
+      options.desc = "Toggle Inlay Hints";
+    }
   ];
 }
