@@ -54,6 +54,14 @@
       action = ''"+y'';
     }
 
+    # Normal mode: Toggle Zen Mode with 'm'
+    {
+      mode = "n";
+      key = "m";
+      action = "<cmd>ZenMode<CR>";
+      options.desc = "Toggle Zen Mode";
+    }
+
     # Normal mode: Clear search highlights
     {
       mode = "n";
