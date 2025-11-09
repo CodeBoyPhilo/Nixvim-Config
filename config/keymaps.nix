@@ -57,7 +57,7 @@
     # Normal mode: Toggle Zen Mode with 'm'
     {
       mode = "n";
-      key = "m";
+      key = "<leader>zm";
       action = "<cmd>ZenMode<CR>";
       options.desc = "Toggle Zen Mode";
     }
