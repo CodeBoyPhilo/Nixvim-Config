@@ -26,6 +26,88 @@
       luaConfig.pre = ''
         vim.lsp.handlers["$/progress"] = function() end
       '';
+      luaConfig.post = ''
+        local util = vim.lsp.util
+
+        local function open_declaration_in_tab(bufnr)
+          local params = util.make_position_params()
+
+          vim.lsp.buf_request(bufnr, "textDocument/declaration", params, function(err, result, ctx, _)
+            if err then
+              local message = (type(err) == "table" and err.message) or tostring(err)
+              vim.notify("LSP declaration failed: " .. message, vim.log.levels.ERROR)
+              return
+            end
+
+            if not result or vim.tbl_isempty(result) then
+              vim.notify("No declaration found", vim.log.levels.INFO)
+              return
+            end
+
+            if not vim.tbl_islist(result) then
+              result = { result }
+            end
+
+            local function open_location(location)
+              local uri = location.targetUri or location.uri
+              local range = location.targetSelectionRange or location.range
+              if not uri then
+                return false
+              end
+
+              local filename = vim.uri_to_fname(uri)
+              if not filename or filename == "" then
+                return false
+              end
+
+              vim.cmd("tabnew " .. vim.fn.fnameescape(filename))
+              local win = vim.api.nvim_get_current_win()
+              local buf = vim.api.nvim_win_get_buf(win)
+
+              if range then
+                local client = ctx and ctx.client_id and vim.lsp.get_client_by_id(ctx.client_id) or nil
+                local encoding = client and client.offset_encoding or "utf-16"
+                local col = util._get_line_byte_from_position(buf, range.start, encoding)
+                if not col then
+                  col = range.start.character
+                end
+                vim.api.nvim_win_set_cursor(win, { range.start.line + 1, math.max(col, 0) })
+              else
+                vim.api.nvim_win_set_cursor(win, { 1, 0 })
+              end
+
+              vim.cmd("normal! zv")
+              return true
+            end
+
+            for _, loc in ipairs(result) do
+              if open_location(loc) then
+                return
+              end
+            end
+
+            local items = util.locations_to_items(result, ctx and ctx.client_id or nil)
+            if not items or vim.tbl_isempty(items) then
+              return
+            end
+
+            local item = items[1]
+            vim.cmd("tabnew " .. vim.fn.fnameescape(item.filename))
+            vim.api.nvim_win_set_cursor(0, { item.lnum, math.max(item.col - 1, 0) })
+            vim.cmd("normal! zv")
+          end)
+        end
+
+        vim.api.nvim_create_autocmd("LspAttach", {
+          callback = function(event)
+            vim.schedule(function()
+              vim.keymap.set("n", "gD", function()
+                open_declaration_in_tab(vim.api.nvim_get_current_buf())
+              end, { buffer = event.buf, desc = "Goto Declaration (new tab)", silent = true })
+            end)
+          end,
+        })
+      '';
 
       # Server configurations
       servers = {
