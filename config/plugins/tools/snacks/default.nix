@@ -19,6 +19,7 @@
       settings = {
         win.enabled = true;
         notify.enabled = true;
+        terminal.enabled = true;
         notifier = {
           enabled = true;
           timeout = 3000;
