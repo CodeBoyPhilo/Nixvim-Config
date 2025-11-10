@@ -1,5 +1,6 @@
 {
   imports = [
+    ./opencode
     ./marks
     ./comment
     ./dap

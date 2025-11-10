@@ -16,6 +16,7 @@
     lazygit
     fzf
     fd
+		lsof
   ];
 
   theme = {

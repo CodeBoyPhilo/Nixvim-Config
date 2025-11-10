@@ -10,7 +10,7 @@
     ./indent.nix
     ./bigfile.nix
     ./lazygit.nix
-		./image.nix
+    ./image.nix
   ];
 
   plugins = {
