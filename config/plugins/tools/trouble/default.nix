@@ -30,6 +30,16 @@
     ];
   };
 
+  plugins.lualine = {
+    settings = {
+      options = {
+        disabled_filetypes = [
+          "trouble"
+        ];
+      };
+    };
+  };
+
   keymaps = [
     {
       mode = "n";
