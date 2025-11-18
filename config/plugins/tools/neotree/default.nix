@@ -10,6 +10,11 @@
       close_if_last_window = true;
       popup_border_style = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
       filesystem = {
+        bind_to_cwd = true;
+        follow_current_file = {
+          enabled = true;
+          leave_dirs_open = true;
+        };
         filtered_items = {
           visible = true;
           never_show = [
