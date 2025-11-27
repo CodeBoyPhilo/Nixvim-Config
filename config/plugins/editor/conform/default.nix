@@ -39,6 +39,7 @@
         json = [ "jq" ];
         tex = [ "tex-fmt" ];
         toml = [ "taplo" ];
+        sh = [ "shfmt" ];
         # Formatter for all filetypes
         "_" = {
           __unkeyed-1 = "trim_whitespace";
