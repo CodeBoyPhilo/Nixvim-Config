@@ -121,7 +121,7 @@
           enable = true;
         };
         ty = {
-          enable = true;
+          enable = false;
         };
         pyrefly = {
           enable = true;
