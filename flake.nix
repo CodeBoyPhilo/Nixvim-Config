@@ -10,6 +10,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-latest.url = "github:nixos/nixpkgs/nixos-unstable";
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
 
@@ -24,6 +25,7 @@
       nixvim,
       flake-utils,
       nixpkgs,
+      nixpkgs-latest,
       self,
       ...
     }@inputs:
@@ -31,9 +33,18 @@
       system:
       let
         nixvimLib = nixvim.lib.${system};
+        pkgs-latest = import nixpkgs-latest {
+          inherit system;
+          config.allowUnfree = true;
+        };
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
+          overlays = [
+            (final: prev: {
+              pyrefly = pkgs-latest.pyrefly;
+            })
+          ];
         };
         nixvim' = nixvim.legacyPackages.${system};
         nixvimModule = {
