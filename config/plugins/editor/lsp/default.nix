@@ -119,6 +119,15 @@
         };
         ruff = {
           enable = true;
+          extraOptions = {
+            init_options = {
+              settings = {
+                lint = {
+                  enable = false;
+                };
+              };
+            };
+          };
         };
         ty = {
           enable = false;
