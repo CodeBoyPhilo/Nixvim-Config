@@ -20,10 +20,10 @@
           __unkeyed-2 = "prettier";
           stop_after_first = true;
         };
-        python = [
-          "black"
-          "isort"
-        ];
+        # python = [
+          # "black"
+          # "isort"
+        # ];
         lua = [ "stylua" ];
         nix = [ "nixfmt-rfc-style" ];
         markdown = {
@@ -43,7 +43,7 @@
         # Formatter for all filetypes
         "_" = {
           __unkeyed-1 = "trim_whitespace";
-          lsp_format = "fallback";
+          lsp_format = "first";
         };
       };
 
