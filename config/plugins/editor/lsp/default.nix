@@ -134,6 +134,20 @@
         };
         pyrefly = {
           enable = true;
+          cmd = [
+            "pyrefly"
+            "lsp"
+          ];
+          filetypes = [ "python" ];
+          rootMarkers= [
+            "pyrefly.toml"
+            "pyproject.toml"
+            "setup.py"
+            "setup.cfg"
+            "requirements.txt"
+            "Pipfile"
+            ".git"
+          ];
         };
         jedi_language_server = {
           enable = false;
