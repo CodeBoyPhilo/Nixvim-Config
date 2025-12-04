@@ -54,7 +54,15 @@
       action = ''"+y'';
     }
 
-    # Normal mode: Toggle Zen Mode with 'm'
+    # Normal mode: Disable default mark setting (conflicts with marks plugin)
+    {
+      mode = "n";
+      key = "m";
+      action = "<nop>";
+      options.desc = "Disable default marks (use <leader>m mappings)";
+    }
+
+    # Normal mode: Toggle Zen Mode with 'zm'
     {
       mode = "n";
       key = "<leader>zm";
