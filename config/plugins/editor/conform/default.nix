@@ -20,10 +20,9 @@
           __unkeyed-2 = "prettier";
           stop_after_first = true;
         };
-        # python = [
-          # "black"
-          # "isort"
-        # ];
+        python = [
+          "isort"
+        ];
         lua = [ "stylua" ];
         nix = [ "nixfmt-rfc-style" ];
         markdown = {
