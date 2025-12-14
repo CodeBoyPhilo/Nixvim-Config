@@ -21,39 +21,54 @@
         package = inputs.blink-cmp.packages.${pkgs.system}.default;
 
         settings = {
-          completion = {
-            accept.auto_brackets.enabled = true;
-            ghost_text.enabled = true;
-            documentation = {
-              auto_show = true;
-              window.border = "rounded";
-            };
-            list.selection.preselect = false;
-            menu = {
-              border = "rounded";
-              draw = {
-                columns = [
-                  { __unkeyed-1 = "label"; }
-                  {
-                    __unkeyed-1 = "kind_icon";
-                    __unkeyed-2 = "kind";
-                    gap = 1;
-                  }
-                  { __unkeyed-1 = "source_name"; }
-                ];
-                components.kind_icon = {
-                  ellipsis = false;
-                  text.__raw = ''
-                    function(ctx)
-                      -- Use only blink's kind icons without mini fallback
-                      return require('blink.cmp.config').appearance.kind_icons[ctx.kind] or ""
-                    end
-                  '';
-                };
-              };
-            };
-          };
-          fuzzy = {
+           completion = {
+             trigger = {
+               prefetch_on_insert = true;
+               show_on_insert = true;
+               show_on_backspace = true;
+               show_on_backspace_in_keyword = true;
+               show_on_keyword = true;
+               show_on_trigger_character = true;
+               show_on_insert_on_trigger_character = true;
+               show_on_accept_on_trigger_character = true;
+               show_on_backspace_after_accept = true;
+               show_on_backspace_after_insert_enter = true;
+             };
+             accept.auto_brackets.enabled = true;
+             ghost_text.enabled = true;
+             documentation = {
+               auto_show = false;
+               window.border = "rounded";
+             };
+             list.selection.preselect = false;
+             menu = {
+               border = "rounded";
+               auto_show = true;
+               auto_show_delay_ms = 0;
+               draw = {
+                 columns = [
+                   { __unkeyed-1 = "label"; }
+                   {
+                     __unkeyed-1 = "kind_icon";
+                     __unkeyed-2 = "kind";
+                     gap = 1;
+                   }
+                   { __unkeyed-1 = "source_name"; }
+                 ];
+                 components.kind_icon = {
+                   ellipsis = false;
+                   text.__raw = ''
+                     function(ctx)
+                       -- Use only blink's kind icons without mini fallback
+                       return require('blink.cmp.config').appearance.kind_icons[ctx.kind] or ""
+                     end
+                   '';
+                 };
+               };
+             };
+           };
+           fuzzy = {
+
             implementation = "rust";
             prebuilt_binaries.download = false;
           };
