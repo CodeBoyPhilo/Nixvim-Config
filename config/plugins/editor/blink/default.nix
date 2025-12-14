@@ -98,8 +98,11 @@
             ];
           };
           signature = {
-            enabled = true;
-            window.border = "rounded";
+            enabled = false;
+            window = {
+              border = "rounded";
+              show_documentation = false;
+            };
           };
           snippets.preset = "luasnip";
           sources = {
