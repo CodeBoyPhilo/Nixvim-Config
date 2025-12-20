@@ -130,10 +130,10 @@
           };
         };
         ty = {
-          enable = false;
+          enable = true;
         };
         pyrefly = {
-          enable = true;
+          enable = false;
           cmd = [
             "pyrefly"
             "lsp"
