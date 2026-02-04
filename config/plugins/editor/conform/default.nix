@@ -39,6 +39,7 @@
         tex = [ "tex-fmt" ];
         toml = [ "taplo" ];
         sh = [ "shfmt" ];
+        julia = [ "runic" ];
         # Formatter for all filetypes
         "_" = {
           __unkeyed-1 = "trim_whitespace";
@@ -84,6 +85,9 @@
         };
         taplo = {
           command = "${lib.getExe pkgs.taplo}";
+        };
+        runic = {
+          command = "runic";
         };
       };
     };
