@@ -35,7 +35,7 @@
                show_on_backspace_after_insert_enter = true;
              };
              accept.auto_brackets.enabled = true;
-             ghost_text.enabled = true;
+             ghost_text.enabled = false;
              documentation = {
                auto_show = false;
                window.border = "rounded";
