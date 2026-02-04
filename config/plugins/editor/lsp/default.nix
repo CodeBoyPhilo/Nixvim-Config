@@ -117,6 +117,34 @@
         lua_ls = {
           enable = true;
         };
+        julials = {
+          enable = true;
+          package = null;
+          cmd = [
+            "julia"
+            "--startup-file=no"
+            "--history-file=no"
+            "-e"
+            ''
+              using LanguageServer;
+              using Pkg;
+              import StaticLint;
+              import SymbolServer;
+              env_path = dirname(Pkg.Types.Context().env.project_file);
+
+              server = LanguageServer.LanguageServerInstance(stdin, stdout, env_path, "");
+              server.runlinter = true;
+              run(server);
+            ''
+          ];
+          filetypes = [ "julia" ];
+          rootMarkers = [
+            "Project.toml"
+            "JuliaProject.toml"
+            "Manifest.toml"
+            ".git"
+          ];
+        };
         ruff = {
           enable = true;
           extraOptions = {
@@ -139,7 +167,7 @@
             "lsp"
           ];
           filetypes = [ "python" ];
-          rootMarkers= [
+          rootMarkers = [
             "pyrefly.toml"
             "pyproject.toml"
             "setup.py"
