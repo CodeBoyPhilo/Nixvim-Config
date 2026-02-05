@@ -10,6 +10,7 @@
     pkgs.vimPlugins.luasnip
     pkgs.vimPlugins.minimap-vim
     pkgs.vimPlugins.leetcode-nvim
+    pkgs.vimPlugins.julia-vim
     (pkgs.vimUtils.buildVimPlugin {
       name = "nvim-silicon";
       src = pkgs.fetchFromGitHub {
@@ -125,6 +126,13 @@
                 
     						---------- transfer ----------
     						require("transfer").setup({})
+
+                ---------- julia-vim ----------
+                vim.g.latex_to_unicode_tab = "on"
+                vim.g.latex_to_unicode_auto = 0
+                vim.g.julia_indent_align_import = 1
+                vim.g.julia_indent_align_brackets = 1
+                vim.g.julia_indent_align_funcargs = 1
         				
   '';
 
