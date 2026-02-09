@@ -17,15 +17,27 @@ in
       enable = true;
       settings = {
         flavour = "mocha";
+        # Use transparent background only when NOT in Neovide
         transparent_background = true;
         custom_highlights = ''
           function(colors)
+          	local is_neovide = vim.g.neovide ~= nil
+          	local bg = is_neovide and colors.base or "NONE"
+          	local bufferline_bg = is_neovide and colors.mantle or "NONE"
+          	
           	return {
-          		BufferLineBackground = { bg = "NONE" },
-          		BufferLineFill = { bg = "NONE" },
-          		BufferLineTab = { bg = "NONE" },
-          		BufferLineTabSelected = { bg = "NONE" },
-          		BufferLineTabClose = { bg = "NONE" },
+          		-- Set proper background for Neovide
+          		Normal = { bg = bg },
+          		NormalNC = { bg = bg },
+          		
+          		-- BufferLine backgrounds
+          		BufferLineBackground = { bg = bufferline_bg },
+          		BufferLineFill = { bg = bufferline_bg },
+          		BufferLineTab = { bg = bufferline_bg },
+          		BufferLineTabSelected = { bg = bg },
+          		BufferLineTabClose = { bg = bufferline_bg },
+          		
+          		-- Syntax highlighting
           		Comment = { fg = colors.surface2, style = { "italic" } },
           		Constant = { fg = colors.peach },
           		String = { fg = colors.green},
@@ -48,6 +60,8 @@ in
           		Typedef = { fg = colors.yellow },
           		Special = { fg = colors.sapphire},
           		Type = { fg = colors.sapphire},
+          		
+          		-- Treesitter
           		["@include"] = { fg = colors.sapphire, style = { "italic" } },
           		["@field"] = { fg = colors.blue },
           		["@property"] = { fg = colors.blue },
@@ -63,23 +77,39 @@ in
           		["@function.builtin"] = { fg = colors.green },
           		["@function"] = { fg = colors.green },
           		["@string"] = { fg = colors.green, },
-          		BufferLineSeparator = { fg = colors.sapphire, bg = "NONE" },
-          		BufferLineBufferVisible = { fg = colors.surface1, bg = "NONE" },
-          		BufferLineBufferSelected = { fg = colors.text, bg = "NONE", style = { "bold", "italic" } },
-          		BufferLineIndicatorSelected = { fg = colors.sapphire, bg = "NONE" },
+          		
+          		-- BufferLine colors
+          		BufferLineSeparator = { fg = colors.sapphire, bg = bufferline_bg },
+          		BufferLineBufferVisible = { fg = colors.surface1, bg = bufferline_bg },
+          		BufferLineBufferSelected = { fg = colors.text, bg = bg, style = { "bold", "italic" } },
+          		BufferLineIndicatorSelected = { fg = colors.sapphire, bg = bg },
+          		
+          		-- Dashboard
           		DbFindFile = { fg = colors.teal, style = { "bold" } },
-          	DbFindWord = { fg = colors.green, style = { "bold" } },
-          	DbConfig = { fg = colors.yellow, style = { "bold" } },
-          	DbQuit = { fg = colors.maroon, style = { "bold" } },
-          	 DbSeparator = { fg = colors.text, style = { "bold" } },
-          	 TreesitterContext = { bg = colors.surface1 },
-          	 TreesitterContextLineNumber = { bg = colors.surface0 },
-          	 TreesitterContextSeparator = { fg = colors.overlay1, bg = colors.surface0 },
+          		DbFindWord = { fg = colors.green, style = { "bold" } },
+          		DbConfig = { fg = colors.yellow, style = { "bold" } },
+          		DbQuit = { fg = colors.maroon, style = { "bold" } },
+          		DbSeparator = { fg = colors.text, style = { "bold" } },
+          		
+          		-- Treesitter context
+          		TreesitterContext = { bg = colors.surface1 },
+          		TreesitterContextLineNumber = { bg = colors.surface0 },
+          		TreesitterContextSeparator = { fg = colors.overlay1, bg = colors.surface0 },
           		TreesitterContextBottom = { style = { "underline" }, sp = colors.overlay1, bg = colors.surface0 },
-          		NormalFloat = { bg = "NONE"},
-          		FloatBorder = { fg = "NONE", bg = "NONE"},
-          		FloatTitle = { fg = colors.text, bg = "NONE"},
-          		CursorLine = { bg = "NONE"},
+          		
+          		-- Float windows - keep transparent unless in Neovide
+          		NormalFloat = { bg = is_neovide and colors.mantle or "NONE"},
+          		FloatBorder = { fg = colors.text, bg = is_neovide and colors.mantle or "NONE"},
+          		FloatTitle = { fg = colors.text, bg = is_neovide and colors.mantle or "NONE"},
+          		
+          		-- Cursor line - use subtle background in Neovide
+          		CursorLine = { bg = is_neovide and colors.surface0 or "NONE"},
+          		
+          		-- Dropbar backgrounds
+          		DropBarMenuNormalFloat = { bg = is_neovide and colors.mantle or "NONE" },
+          		DropBarMenuHoverEntry = { bg = colors.surface0 },
+          		DropBarMenuHoverIcon = { bg = colors.surface0 },
+          		DropBarMenuCurrentContext = { bg = colors.surface1 },
           	}
           end
         '';
