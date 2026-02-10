@@ -43,7 +43,8 @@
           overlays = [
             (final: prev: {
               pyrefly = pkgs-latest.pyrefly;
-              ty= pkgs-latest.ty;
+              ty = pkgs-latest.ty;
+							yazi = pkgs-latest.yazi;
             })
           ];
         };
