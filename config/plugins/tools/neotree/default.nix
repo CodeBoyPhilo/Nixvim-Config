@@ -50,7 +50,7 @@
       mode = "n";
       key = "<leader>ee";
       # action = ":Neotree filesystem float reveal_force_cwd<cr>";
-			action = ":Neotree float toggle<cr>";
+			action = ":Neotree float toggle reveal_force_cwd<cr>";
       options = {
         silent = true;
         desc = "Explorer NeoTree";
