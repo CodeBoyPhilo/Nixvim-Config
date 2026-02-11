@@ -56,5 +56,17 @@
       mode = "n";
       options.desc = "Find todos";
     }
+    {
+      key = "<leader>fp";
+      action = "<cmd>Telescope projects<CR>";
+      mode = "n";
+      options.desc = "Find projects";
+    }
+    {
+      key = "<leader>fa";
+      action = "<cmd>Telescope<CR>";
+      mode = "n";
+      options.desc = "Toggle Telescope";
+    }
   ];
 }
