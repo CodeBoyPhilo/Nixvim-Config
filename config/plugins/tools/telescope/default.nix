@@ -68,5 +68,17 @@
       mode = "n";
       options.desc = "Toggle Telescope";
     }
+    {
+      key = "<leader>fg";
+      action = "<cmd>Telescope git_status<CR>";
+      mode = "n";
+      options.desc = "Find git status";
+    }
+    {
+      key = "<leader>fb";
+      action = "<cmd>Telescope buffers<CR>";
+      mode = "n";
+      options.desc = "Find buffers";
+    }
   ];
 }
