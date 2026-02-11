@@ -44,7 +44,6 @@
     {
       mode = [
         "n"
-        "t"
       ];
       key = "<leader>tt";
       action.__raw = ''
@@ -65,7 +64,6 @@
     {
       mode = [
         "n"
-        "t"
       ];
       key = "<leader>th";
       action.__raw = ''
@@ -84,7 +82,6 @@
     {
       mode = [
         "n"
-        "t"
       ];
       key = "<leader>tv";
       action.__raw = ''
@@ -103,7 +100,6 @@
     {
       mode = [
         "n"
-        "t"
       ];
       key = "<leader>tq";
       action.__raw = ''
