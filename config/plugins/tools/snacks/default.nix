@@ -100,8 +100,9 @@
     {
       mode = [
         "n"
+				"t"
       ];
-      key = "<leader>tq";
+      key = "<C-q>";
       action.__raw = ''
         function()
           for _, term in ipairs(Snacks.terminal.list()) do
