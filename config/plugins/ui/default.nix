@@ -14,7 +14,6 @@ in
     ./notify
     ./nui
     ./numbertoggle
-    ./tagbar
     ./tokyonight
     ./ufo
     ./web-devicons
