@@ -21,5 +21,7 @@
     ./wakatime
     ./which-key
     ./yazi
+		./project
+		./todo-comments
   ];
 }
