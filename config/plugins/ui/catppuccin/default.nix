@@ -19,6 +19,7 @@ in
         flavour = "mocha";
         # Use transparent background only when NOT in Neovide
         transparent_background = true;
+        term_colors = true;
         custom_highlights = ''
           function(colors)
           	local is_neovide = vim.g.neovide ~= nil
@@ -101,6 +102,9 @@ in
           		NormalFloat = { bg = is_neovide and colors.mantle or "NONE"},
           		FloatBorder = { fg = colors.text, bg = is_neovide and colors.mantle or "NONE"},
           		FloatTitle = { fg = colors.text, bg = is_neovide and colors.mantle or "NONE"},
+
+				-- Terminal background - match themed background in Neovide
+				Terminal = { bg = is_neovide and colors.base or "NONE" },
           		
           		-- Cursor line - use subtle background in Neovide
           		CursorLine = { bg = is_neovide and colors.surface0 or "NONE"},

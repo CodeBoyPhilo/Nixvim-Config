@@ -118,6 +118,32 @@
       options.desc = "Close current split";
     }
 
+    # Terminal mode: Navigate splits with Ctrl-hjkl
+    {
+      mode = "t";
+      key = "<C-h>";
+      action = "<C-\\><C-n><C-w>h";
+      options.desc = "Go to left split";
+    }
+    {
+      mode = "t";
+      key = "<C-j>";
+      action = "<C-\\><C-n><C-w>j";
+      options.desc = "Go to lower split";
+    }
+    {
+      mode = "t";
+      key = "<C-k>";
+      action = "<C-\\><C-n><C-w>k";
+      options.desc = "Go to upper split";
+    }
+    {
+      mode = "t";
+      key = "<C-l>";
+      action = "<C-\\><C-n><C-w>l";
+      options.desc = "Go to right split";
+    }
+
     # Tab management
     {
       mode = "n";
