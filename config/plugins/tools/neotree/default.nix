@@ -19,7 +19,6 @@
           visible = true;
           never_show = [
             ".git"
-            ".gitignore"
             ".DS_Store"
             "__pycache__"
             ".ipynb_checkpoints"
@@ -37,7 +36,7 @@
       window = {
         width = 40;
         height = 15;
-        auto_expand_width = false;
+        auto_expand_width = true;
         mappings = {
           "<C-t>" = "open_tabnew";
           "<C-v>" = "open_vsplit";
@@ -50,25 +49,17 @@
     {
       mode = "n";
       key = "<leader>ee";
-      action = ":Neotree toggle reveal_force_cwd<cr>";
+      # action = ":Neotree filesystem float reveal_force_cwd<cr>";
+			action = ":Neotree float toggle<cr>";
       options = {
         silent = true;
-        desc = "Explorer NeoTree (root dir)";
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>eE";
-      action = "<cmd>Neotree toggle<CR>";
-      options = {
-        silent = true;
-        desc = "Explorer NeoTree (cwd)";
+        desc = "Explorer NeoTree";
       };
     }
     {
       mode = "n";
       key = "<leader>eb";
-      action = ":Neotree buffers<CR>";
+      action = ":Neotree buffers float<CR>";
       options = {
         silent = true;
         desc = "Buffer explorer";
@@ -77,7 +68,7 @@
     {
       mode = "n";
       key = "<leader>eg";
-      action = ":Neotree git_status<CR>";
+      action = ":Neotree git_status float<CR>";
       options = {
         silent = true;
         desc = "Git explorer";
