@@ -73,6 +73,9 @@
             win = {
               position = "bottom",
               height = 0.35,
+              wo = {
+                winbar = "%#WinSeparator#%{repeat('─', winwidth(0))}";
+              },
             },
           })
         end
@@ -91,6 +94,9 @@
             win = {
               position = "right",
               width = 0.45,
+              wo = {
+                winbar = "";
+              },
             },
           })
         end
