@@ -12,7 +12,12 @@
           ""
         ];
         mru.enable = false;
-        week_header.enable = true;
+        week_header = {
+          enable = true;
+          append = [
+            ""
+          ];
+        };
         project.enable = false;
         shortcut = [
           {
