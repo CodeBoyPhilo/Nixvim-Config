@@ -62,6 +62,7 @@
     local DASHBOARD_PREVIEW_HEIGHT = 20
     local DASHBOARD_PREVIEW_WIDTH = 80
     local DASHBOARD_HEADER_LIFT = 6
+    local DASHBOARD_PREVIEW_GAP = vim.g.neovide and 1 or 0
     local DASHBOARD_PREVIEW_BG_HL = "DashboardPreviewBackground"
     local DASHBOARD_HIDDEN_CURSOR_HL = "DashboardHiddenCursor"
 
@@ -350,21 +351,30 @@
       local win_height = vim.api.nvim_win_get_height(winid)
       local line_count = vim.api.nvim_buf_line_count(bufnr)
       local available_extra_lines = win_height - line_count - 1
-      local preview_height = math.min(DASHBOARD_PREVIEW_HEIGHT, math.max(0, available_extra_lines))
+      local usable_extra_lines = math.max(0, available_extra_lines - DASHBOARD_PREVIEW_GAP)
+      local preview_height = math.min(DASHBOARD_PREVIEW_HEIGHT, usable_extra_lines)
       if preview_height == 0 then
         return
       end
 
-      insert_preview_slot(bufnr, time_line, preview_height)
+      insert_preview_slot(bufnr, time_line, preview_height + DASHBOARD_PREVIEW_GAP)
 
       local preview_width = math.min(
         DASHBOARD_PREVIEW_WIDTH,
         math.max(40, vim.api.nvim_win_get_width(winid) - 4)
       )
-      local pos = vim.fn.screenpos(winid, time_line + 1, 1)
-      if not pos or pos.row == 0 then
+      local target_line = time_line + 1 + DASHBOARD_PREVIEW_GAP
+      local top_line = vim.api.nvim_win_call(winid, function()
+        return vim.fn.line("w0")
+      end)
+      local row = target_line - top_line
+      if row < 0 or row >= win_height then
         stop_dashboard_preview()
         return
+      end
+
+      if row + preview_height > win_height then
+        row = math.max(0, win_height - preview_height)
       end
 
       dashboard_preview_bufnr = vim.api.nvim_create_buf(false, true)
@@ -372,9 +382,10 @@
       vim.bo[dashboard_preview_bufnr].filetype = "dashboardpreview"
 
       dashboard_preview_winid = vim.api.nvim_open_win(dashboard_preview_bufnr, false, {
-        relative = "editor",
-        row = pos.row - 1,
-        col = math.floor((vim.o.columns - preview_width) / 2),
+        relative = "win",
+        win = winid,
+        row = row,
+        col = math.max(0, math.floor((vim.api.nvim_win_get_width(winid) - preview_width) / 2)),
         width = preview_width,
         height = preview_height,
         style = "minimal",
