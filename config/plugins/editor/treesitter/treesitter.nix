@@ -3,7 +3,7 @@
   plugins = {
     treesitter = {
       enable = true;
-      folding = false;
+      folding.enable = false;
 
       settings = {
         highlight = {
@@ -34,7 +34,8 @@
     };
 
     treesitter-refactor = {
-      inherit (config.plugins.treesitter) enable;
+      enable = false;
+      # inherit (config.plugins.treesitter) enable;
 
       settings = {
         highlight_definitions = {
