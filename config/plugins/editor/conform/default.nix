@@ -24,7 +24,7 @@
           "isort"
         ];
         lua = [ "stylua" ];
-        nix = [ "nixfmt-rfc-style" ];
+        nix = [ "nixfmt" ];
         markdown = {
           __unkeyed-1 = "prettierd";
           __unkeyed-2 = "prettier";
@@ -54,8 +54,8 @@
         isort = {
           command = "${lib.getExe pkgs.isort}";
         };
-        nixfmt-rfc-style = {
-          command = "${lib.getExe pkgs.nixfmt-rfc-style}";
+        nixfmt = {
+          command = "${lib.getExe pkgs.nixfmt}";
         };
         jq = {
           command = "${lib.getExe pkgs.jq}";

@@ -202,7 +202,7 @@
             in
             {
               formatting = {
-                command = [ "${lib.getExe pkgs.nixfmt-rfc-style}" ];
+                command = [ "${lib.getExe pkgs.nixfmt}" ];
               };
               nixpkgs.expr = "import ${flake}.inputs.nixpkgs { }";
               options = {
