@@ -20,7 +20,8 @@
   ];
 
   theme = {
-    catppuccin.enable = true;
+    catppuccin.enable = false;
     tokyonight.enable = false;
+    maple.enable = true;
   };
 }

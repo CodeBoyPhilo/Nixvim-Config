@@ -1,5 +1,4 @@
 { lib, config, ... }:
-
 let
   theme = config.theme;
 in
@@ -18,13 +17,18 @@ in
     ./ufo
     ./web-devicons
     ./zen-mode
+    ./maple
   ];
-
   config = {
     assertions = [
       {
-        assertion = theme.catppuccin.enable != theme.tokyonight.enable;
-        message = "Enable exactly one theme (catppuccin or tokyonight).";
+        assertion =
+          (lib.count (enabled: enabled) [
+            theme.catppuccin.enable
+            theme.tokyonight.enable
+            theme.maple.enable
+          ]) == 1;
+        message = "Enable exactly one theme (catppuccin, tokyonight, maple).";
       }
     ];
   };
