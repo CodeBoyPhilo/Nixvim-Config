@@ -62,7 +62,7 @@
     local DASHBOARD_PREVIEW_HEIGHT = 20
     local DASHBOARD_PREVIEW_WIDTH = 80
     local DASHBOARD_HEADER_LIFT = 6
-    local DASHBOARD_PREVIEW_GAP = vim.g.neovide and 1 or 0
+    local DASHBOARD_PREVIEW_GAP = vim.g.dashboard_preview_gap or 1
     local DASHBOARD_PREVIEW_BG_HL = "DashboardPreviewBackground"
     local DASHBOARD_HIDDEN_CURSOR_HL = "DashboardHiddenCursor"
 
