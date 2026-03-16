@@ -12,6 +12,19 @@
           enabled = true;
         };
       };
+      html = {
+        tag = {
+          s = {
+            scope_highlight = "@markup.strikethrough";
+          };
+          del = {
+            scope_highlight = "@markup.strikethrough";
+          };
+          strike = {
+            scope_highlight = "@markup.strikethrough";
+          };
+        };
+      };
     };
   };
 }
