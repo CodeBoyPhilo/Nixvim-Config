@@ -13,6 +13,7 @@ in
     ./notify
     ./nui
     ./numbertoggle
+    ./tab-switcher
     ./tokyonight
     ./ufo
     ./web-devicons

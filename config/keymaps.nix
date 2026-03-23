@@ -166,8 +166,12 @@
     {
       mode = "n";
       key = "<leader>tp";
-      action = "<cmd>tabp<CR>";
-      options.desc = "Go to previous tab";
+      action.__raw = ''
+        function()
+          _G.OpenCodeTabSwitcher.jump_to_previous_focus()
+        end
+      '';
+      options.desc = "Go to previously focused tab";
     }
     {
       mode = "n";
