@@ -12,8 +12,14 @@
       settings = {
         provider_selector = # lua
           ''
-            function()
-              return { "lsp", "indent" }
+            function(_, filetype)
+              local ft_map = {
+                markdown = { "treesitter", "indent" },
+                quarto = { "treesitter", "indent" },
+                Avante = { "treesitter", "indent" },
+              }
+
+              return ft_map[filetype] or { "lsp", "indent" }
             end
           '';
       };
