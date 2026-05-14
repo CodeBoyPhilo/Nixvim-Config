@@ -13,13 +13,15 @@
         provider_selector = # lua
           ''
             function(_, filetype)
-              local ft_map = {
-                markdown = { "treesitter", "indent" },
-                quarto = { "treesitter", "indent" },
-                Avante = { "treesitter", "indent" },
-              }
+            	local ft_map = {
+            		markdown = { "treesitter", "indent" },
+            		quarto = { "treesitter", "indent" },
+            		Avante = { "treesitter", "indent" },
+            		tex = { "treesitter", "indent" },
+            		plaintex = { "treesitter", "indent" },
+            	}
 
-              return ft_map[filetype] or { "lsp", "indent" }
+            	return ft_map[filetype] or { "lsp", "indent" }
             end
           '';
       };
