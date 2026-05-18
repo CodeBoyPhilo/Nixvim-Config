@@ -6,6 +6,7 @@
     ./dap
     ./flash
     ./gitsigns
+    ./grug-far
     ./highlight-colors
     ./lazy
     ./markdown-preview

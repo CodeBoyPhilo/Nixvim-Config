@@ -13,6 +13,7 @@
 
   extraPackages = with pkgs; [
     ripgrep
+    ast-grep
     lazygit
     fzf
     fd
