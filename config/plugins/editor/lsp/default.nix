@@ -220,6 +220,14 @@
         };
         texlab = {
           enable = true;
+          rootMarkers = [
+            ".latexmkrc"
+            "latexmkrc"
+            ".texlabroot"
+            "texlabroot"
+            "Tectonic.toml"
+            ".git"
+          ];
         };
         tinymist = {
           enable = true;
