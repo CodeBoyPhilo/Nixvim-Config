@@ -100,6 +100,16 @@
 
         vim.api.nvim_create_autocmd("LspAttach", {
           callback = function(event)
+            local client = vim.lsp.get_client_by_id(event.data.client_id)
+            if client and client.name == "texlab" and client.root_dir and vim.bo[event.buf].filetype == "bib" then
+              local main = vim.fs.joinpath(client.root_dir, "main.tex")
+              if vim.fn.filereadable(main) == 1 then
+                vim.schedule(function()
+                  vim.fn.bufload(vim.fn.bufadd(main))
+                end)
+              end
+            end
+
             vim.schedule(function()
               vim.keymap.set("n", "gD", function()
                 open_declaration_in_tab(vim.api.nvim_get_current_buf())
