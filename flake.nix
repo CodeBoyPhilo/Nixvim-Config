@@ -15,7 +15,7 @@
     flake-utils.url = "github:numtide/flake-utils";
 
     blink-cmp = {
-      url = "github:saghen/blink.cmp";
+      url = "github:saghen/blink.cmp/v1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
