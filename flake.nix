@@ -14,10 +14,7 @@
     nixvim.url = "github:nix-community/nixvim";
     flake-utils.url = "github:numtide/flake-utils";
 
-    blink-cmp = {
-      url = "github:saghen/blink.cmp/v1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    blink-cmp.url = "github:saghen/blink.cmp/v1";
   };
 
   outputs =
@@ -29,7 +26,7 @@
       self,
       ...
     }@inputs:
-    flake-utils.lib.eachDefaultSystem (
+    flake-utils.lib.eachSystem (builtins.attrNames nixvim.legacyPackages) (
       system:
       let
         nixvimLib = nixvim.lib.${system};

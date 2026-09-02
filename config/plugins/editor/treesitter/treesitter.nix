@@ -4,19 +4,17 @@
     treesitter = {
       enable = true;
       folding.enable = false;
+      highlight = {
+        enable = true;
+        enableVimSyntax = true;
+        disable.__raw = ''
+          function(_, bufnr)
+            return vim.api.nvim_buf_line_count(bufnr) > 10000
+          end
+        '';
+      };
 
       settings = {
-        highlight = {
-          additional_vim_regex_highlighting = true;
-          enable = true;
-          disable = # Lua
-            ''
-              function(lang, bufnr)
-                return vim.api.nvim_buf_line_count(bufnr) > 10000
-              end
-            '';
-        };
-
         incremental_selection.enable = true;
         indent.enable = false;
       };

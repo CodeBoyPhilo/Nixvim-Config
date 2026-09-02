@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
-  isDarwin = pkgs.stdenv.isDarwin;
-  isLinux = pkgs.stdenv.isLinux;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 {
   extraConfigLuaPre = ''
@@ -12,7 +11,7 @@ in
 
   plugins.vimtex = {
     enable = true;
-    texlivePackage = pkgs.texlive.combined.scheme-full;
+    texlivePackage = pkgs.texliveFull;
     settings = {
       view_method = if isDarwin then "skim" else "zathura";
       compiler_latexmk = {

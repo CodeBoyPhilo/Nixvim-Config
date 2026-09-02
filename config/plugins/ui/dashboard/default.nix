@@ -496,6 +496,13 @@
         refresh_dashboard_cursor()
 
         lift_dashboard_header(bufnr, DASHBOARD_HEADER_LIFT)
+
+        local was_modifiable = vim.bo[bufnr].modifiable
+        vim.bo[bufnr].modifiable = true
+        vim.api.nvim_buf_set_lines(bufnr, 0, 0, false, { "" })
+        vim.bo[bufnr].modifiable = was_modifiable
+        vim.bo[bufnr].modified = false
+
         refresh_dashboard_state()
       end,
     })

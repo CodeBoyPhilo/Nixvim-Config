@@ -27,8 +27,9 @@
             return false
           end
 
+          local has_parser, parser = pcall(vim.treesitter.get_parser, buf)
           return vim.bo[buf].ft == "markdown"
-            or pcall(vim.treesitter.get_parser, buf)
+            or (has_parser and parser ~= nil)
             or not vim.tbl_isempty(vim.lsp.get_clients({
               bufnr = buf,
               method = "textDocument/documentSymbol",
